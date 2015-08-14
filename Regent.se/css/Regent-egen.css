@@ -1,0 +1,12 @@
+/* Set footer to display on bottom of the screen */
+#Wrapper {position:relative;} 
+#Outer {padding-bottom:154px; /*adjust as needed*/ } 
+#CallOutArea {position:absolute; bottom:72px; /*adjust as needed*/ width:100%;} 
+#FooterArea {position:absolute; bottom:0; width:100%;}
+#BgLayer1 {display:block; min-height:auto;} 
+
+.navbar-top{
+	display:none;
+}
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

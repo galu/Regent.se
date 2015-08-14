@@ -1,0 +1,33 @@
+/* Gömmer login-panelen */
+.navbar-top{
+	display:none;
+}
+/* Vertialt centrerad och något mindre, .png krispigare på mobilen vid nedskalning */
+#Logo{
+	padding:15px;
+}
+#Logo img{
+	width:200px;
+	margin-top:2px;
+}
+/* Style karusellen */
+.carousel .carousel-indicators{
+	background: transparent;
+	padding:0;
+	bottom:10px;
+	width: 50px;
+	margin-left: -25px;
+}
+.carousel .carousel-control{
+	background:transparent !important;
+}
+.carousel .carousel-control:after{
+	font-size:54px !important;
+	text-shadow:none;
+}
+
+/*
+header.navbar {
+	background-color: #ffffff !important;	
+}*/
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

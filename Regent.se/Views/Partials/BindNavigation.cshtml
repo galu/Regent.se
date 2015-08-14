@@ -1,0 +1,39 @@
+@inherits UmbracoTemplatePage
+@{
+    // Model.Content is the current page that we're on AncestorsOrSelf is all of the ancestors this page has in the tree
+    // (1) means: go up to level 1 and stop looking for more ancestors when you get there First() gets the first ancestor found (the home page, on level 1)
+    var homePage = CurrentPage.AncestorsOrSelf(1).First();
+    var menuItems = homePage.Children.Where("UmbracoNaviHide == false");
+}
+<!-- Nav -->
+<ul class="menu">
+	@* If the Url of the current page is "/" then we want to add the class "current_page_item" *@
+	@* Otherwise, we set the class to null, that way it will not even be added to the <li> element *@
+	<li class="@(CurrentPage.Url == "/" ? "sel" : null)">
+		<a href="/">Home</a>
+	</li>
+	@foreach (var item in menuItems)
+	{
+        var childrenItems = item.Children.Where("UmbracoNaviHide == false");
+		<li class="@(CurrentPage.Id == item.Id ? "sel" : null)">
+            <a href="@item.Url">@item.Name</a>
+            @createSubmenu(childrenItems, item.Id)
+        </li>
+	}
+</ul>
+
+@helper createSubmenu(IEnumerable<IPublishedContent> nodes, int? parentId) {
+	if (nodes.Count() > 0){
+		<ul>
+		@foreach (var node in nodes)
+		{
+			var childrenItems = node.Children.Where("UmbracoNaviHide == false");
+			<li class="@(CurrentPage.Id == node.Id ? "sel" : null)">
+				<a href="@node.Url">@node.Name</a>
+				@createSubmenu(childrenItems, node.Id)
+			</li>
+		}
+		</ul>
+	}
+}
+<!-- /Nav -->
