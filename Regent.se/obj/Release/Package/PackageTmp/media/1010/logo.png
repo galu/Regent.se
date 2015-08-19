@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <base href="/umbraco/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title ng-bind="$root.locationTitle">Umbraco</title>
+    
+
+
+    <link href="/DependencyHandler.axd?s=L3VtYnJhY28vYXNzZXRzL2Nzcy91bWJyYWNvLmNzczsvdW1icmFjb19jbGllbnQvdHJlZS90cmVlaWNvbnMuY3NzOw&amp;t=Css&amp;cdv=1050561851" type="text/css" rel="stylesheet"/>
+
+</head>
+<body ng-class="{touch:touchDevice}" ng-controller="Umbraco.MainController" id="umbracoMainPageBody">
+    <div ng-hide="!authenticated" ng-cloak id="mainwrapper"  id="mainwrapper" class="clearfix" ng-click="closeDialogs($event)">
+
+        <umb-navigation></umb-navigation>
+
+        <section id="contentwrapper">
+            <div id="contentcolumn" ng-view>
+            </div>
+        </section>
+
+    </div>
+
+    <umb-notifications></umb-notifications>
+
+
+        
+    <script type="text/javascript">
+        var Umbraco = {};
+        Umbraco.Sys = {};
+        Umbraco.Sys.ServerVariables = {
+            "umbracoUrls": {                
+                "authenticationApiBaseUrl": "/umbraco/backoffice/UmbracoApi/Authentication/",
+                "serverVarsJs": '/umbraco/ServerVariables?umb__rnd=fffffffec60e553a'
+            }
+        };       
+    </script>
+
+    
+    <script type="text/javascript" src="lib/lazyload/lazyload.min.js"></script>
+    <script type="text/javascript" src="/umbraco/Application?umb__rnd=fffffffec60e553a"></script>
+
+</body>
+</html>
+

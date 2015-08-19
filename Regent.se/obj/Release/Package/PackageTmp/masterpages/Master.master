@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title><umbraco:Item field="pageTitle" useIfEmpty="pageName" runat="server"></umbraco:Item></title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="<umbraco:Item field='metaDescription' runat='server'></umbraco:Item>" />
+	<meta name="keywords" content="<umbraco:Item field='metaKeywords' runat='server'></umbraco:Item>" />
+	
+	<link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+	<link rel="stylesheet" href="/css/Regent.css" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="/css/custom-components.css" media="all" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans">
+	
+	<script type="text/javascript" src="/scripts/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="/scripts/umbusiness.js"></script>
+</head>
+<body>
+	<div id="page_container">
+		
+		<div class="header">
+			<h1><umbraco:Item field="siteName" recursive="true" runat="server"></umbraco:Item></h1>
+			<p class="tagline"><umbraco:Item field="siteTagline" recursive="true" runat="server"></umbraco:Item></p>
+			<p class="contact"><umbraco:Item field="siteContactNumber" recursive="true" runat="server"></umbraco:Item></p>
+			
+			<form action="" class="site_search">
+				<fieldset class="site_search">
+					<label for="search">Search</label>
+					<input type="text" name="search" id="search" />
+					<input type="submit" value="search" />
+				</fieldset>	
+			</form>
+			
+			<umbraco:Macro Alias="TopNavigation" runat="server"></umbraco:Macro>
+			
+		</div> <!-- /header -->
+		
+		
+		<asp:ContentPlaceHolder Id="childContent" runat="server">
+			<!-- Insert default "childContent" markup here -->
+		</asp:ContentPlaceHolder>
+
+		
+		<div class="clear"></div>
+	</div> <!-- /page_container -->
+	
+	<div id="page_footer">
+		<p class="footer_left">
+			&copy; 2009 <umbraco:Item field="siteName" recursive="true" runat="server"></umbraco:Item><umbraco:Item field="siteContactNumber" recursive="true" insertTextBefore=", tel: " runat="server"></umbraco:Item>
+		</p>
+		<p class="footer_right">
+			<umbraco:Item field="siteMainAddress" recursive="true" runat="server"></umbraco:Item>
+		</p>
+	</div>
+	
+</body>
+</html>
+</asp:Content>

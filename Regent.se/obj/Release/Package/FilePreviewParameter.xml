@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="regentab" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^\\\\psf\\Home\\Documents\\Regent\.se\\Regent\.se\\Regent\.se\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^\\\\psf\\Home\\Documents\\Regent\.se\\Regent\.se\\Regent\.se\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="umbracoDbDSN-Web.config Connection String" description="" value="Data Source=tcp:h75s1y7jv2.database.windows.net,1433;Initial Catalog=regentab_db;User Id=regentdbuser@h75s1y7jv2;Password=Regent2015!" tags="">
+    <parameterEntry kind="XmlFile" scope="\\\\psf\\Home\\Documents\\Regent\.se\\Regent\.se\\Regent\.se\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='umbracoDbDSN']/@connectionString" />
+  </parameter>
+</parameters>
